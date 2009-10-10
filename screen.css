@@ -4,130 +4,24 @@ body {
   font-size:16px;
   background:#fff;
   width:650px;
+  background-color:#000;
+  color:#fab444;
 }
 
-h1 { color:#121212; 
-  font-size:20px;
-  margin-top:40px;
-  border-bottom:2px dotted #fab444;
-  padding-left:250px;
-}
-
-.name { font-size:24px;
-  color:#731000;
-  margin:0px;
-  border:none;
-  color:#121212; 
-  font-size:20px;
-  margin-bottom:20px;
-  border-bottom:2px dotted #fab444;
-  font-weight:bold; 
-  padding-left:250px;
-
-}
-
-h2 { font-size:22px; line-height:30px; color:#731000; }
-
-
-#work { margin-left:250px;
-  margin-top:0px;
-}
-
-#bday { margin-left:250px;
-  margin-top:0px;
-}
-
-.footer { 
-  text-align:center;
-  color:#e6e6e6;
-  margin-top:42px;
-  font-variant:small-caps;
+#bg {
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  z-index: -50;
 }
 
 
-
-.lightbox { 
-  border:2px solid #eeeeee;
-  margin-left:250px;
-  line-height:23px;
-  padding-left:10px;
-  padding-bottom:15px; padding-top:5px;
-  width:350px;
-  margin-bottom:25px;
+#content{
+  display:none;
+  z-index: 100;
+  margin-top:350px;
+  margin-left: 350px
 }
-
-.lightbox .desc { 
-  border-bottom:1px dashed #c9c9c9;
-  color:#731000;
-  margin:0px;
-  margin-right:5px;
-  padding:0px;
-  text-align:right;
-  float:right;
-  font-variant:small-caps;
-}
-
-.lightbox .desc h2 { margin:0px;
-  padding:0px;
-  font-size:18px;
-}
-
-.bbox { 
-  margin-bottom:23px;
-}
-
-.bbox .date { font-weight:normal;
-  color:#000;
-  width:240px;
-  background:#f6ead6;
-  text-align:center;
-  float:left;
-  line-height:30px;
-}
-
-.bbox .sdate { font-weight:normal;
-  color:#000;
-  width:240px;
-  background:#f6ead6;
-  text-align:center;
-  float:left;
-  line-height:30px;
-}
-
-
-.bbox .header { font-weight:bold; 
-  padding-left:250px; 
-  font-variant:small-caps;
-  background:#f6f6f6;
-}
-
-.bbox .header table {  }
-
-.bbox table { margin-left:250px; width:100%; }
-.bbox table th { padding-right:3%; vertical-align:middle; padding-bottom:5px; font-variant:normal;}
-.bbox table td { padding-left:3%; border-left:3px solid #f6ead6; font-variant:normal; font-size:15px; width:100%; }
-.bbox p { 
-  margin-left:250px;
-  line-height:30px;
-}
-
-.bbox pre { 
-  margin-left:250px;
-  max-height:200px;
-  overflow:auto;
-}
-
-
-
-
-.boxdesc  { }
-.phone_nr { }
-.email    { }
-.hp       { }
-
-#bday:before { content:"*";color:Red }
-.phone_nr:before { border-bottom: 1px solid #eee; content:"Tel.: " }
-.email:before {    border-bottom: 1px solid #eee; content:"@ " }
-.hp:before {    border-bottom: 1px solid #eee; content:"www: " }
-
 
