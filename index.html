@@ -1,55 +1,79 @@
-!!! XML
-!!! Strict
-%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
-  %head
-    %link{:rel => "stylesheet", :type => "text/css", :href => "css/baseline.reset.css" }=''
-    %link{:rel => "stylesheet", :type => "text/css", :href => "css/baseline.base.css" }=''
-    %link{:rel => "stylesheet", :type => "text/css", :href => "css/baseline.grid.css" }=''
-    %link{:rel => "stylesheet", :type => "text/css", :href => "css/baseline.form.css" }=''
-    %link{:rel => "stylesheet", :type => "text/css", :href => "css/baseline.table.css" }=''
-    %link{:rel => "stylesheet", :type => "text/css", :href => "css/baseline.type.css" }=''
-    %link{:rel => "stylesheet", :type => "text/css", :href => "css/credits.css" }=''
-    %link{:href => "screen.css", :rel => "stylesheet", :type => "text/css"}=''
-    
-    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
-    %title Ackro::Inc.about :entropie
-    %script{:type => "text/javascript", :src => "/script/jquery.js"}=""
-  %body
-    #bg_source{:style => "display:none"}
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <link href='css/baseline.reset.css' rel='stylesheet' type='text/css'></link>
+    <link href='css/baseline.base.css' rel='stylesheet' type='text/css'></link>
+    <link href='css/baseline.grid.css' rel='stylesheet' type='text/css'></link>
+    <link href='css/baseline.form.css' rel='stylesheet' type='text/css'></link>
+    <link href='css/baseline.table.css' rel='stylesheet' type='text/css'></link>
+    <link href='css/baseline.type.css' rel='stylesheet' type='text/css'></link>
+    <link href='css/credits.css' rel='stylesheet' type='text/css'></link>
+    <link href='screen.css' rel='stylesheet' type='text/css'></link>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
+    <title>Ackro::Inc.about :entropie</title>
+    <script src='/script/jquery.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div id='bg_source' style='display:none'>
       Image Source: http://www.flickr.com/photos/extrujado/2436864001/
-    #bg
-      %img{ :src => "img/dustbg.png", :height => "500", :alt => "", :width => "100%" }
-    #pagetitle
+    </div>
+    <div id='bg'>
+      <img alt='' height='500' src='img/dustbg.png' width='100%' />
+    </div>
+    <div id='pagetitle'>
       Ackro::Inc.about :entropie
-    #content
-      #head
-      #page
-        %div{:class => "column width1 first"}
-        %div{:class => "column width3"}
-          %h1
+    </div>
+    <div id='content'>
+      <div id='head'></div>
+      <div id='page'>
+        <div class='column width1 first'></div>
+        <div class='column width3'>
+          <h1>
             Die erste Sichtbare Überschrift Lalal und lili
-        %div{:class => "column width1 first dark right"}
-          %p
+          </h1>
+        </div>
+        <div class='column width1 first dark right'>
+          <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        %div{:class => "column width3"}
-          %div{:class => "rounded silver nomargin"}
-            %p
+          </p>
+        </div>
+        <div class='column width3'>
+          <div class='rounded silver nomargin'>
+            <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            %p
+            </p>
+            <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            %p
+            </p>
+            <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        %div{:class => "column width1 first"}
-        %div{:class => "column width3"}            
-          %h1
+            </p>
+          </div>
+        </div>
+        <div class='column width1 first'></div>
+        <div class='column width3'>
+          <h1>
             Die erste Sichtbare Überschria
-        %div{:class => "column width1 first dark right"}
-          %p
+          </h1>
+        </div>
+        <div class='column width1 first dark right'>
+          <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        %div{:class => "column width3"}
-          %div{:class => "rounded silver nomargin"}
-            %p
+          </p>
+        </div>
+        <div class='column width3'>
+          <div class='rounded silver nomargin'>
+            <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-            %p
-              Lorem ipsum dolor sit aamet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+            </p>
+            <p>
+              Lorem ipsum dolor sit aamet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

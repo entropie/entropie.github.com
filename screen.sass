@@ -1,10 +1,55 @@
+#page
+  //:margin 0 auto 36px auto
+.child
+  :margin-top 100px
+.silver
+  :background-color #080500
+  :color #6c7369
+
+.right
+  :margin-top -32px
+  p
+    :padding 10px
+    :font-size 0.7em
+
+.nomargin
+  :margin 0px
+  :padding 0px
+.rounded
+  h1,h2
+    :padding-left 10px
+    :font-size 1.1em
+    :margin-bottom 0px
+  > p
+    :padding 20px
+  &:before
+    :background url(img/corner-top-right.png) no-repeat top right
+    :margin-bottom -20px
+    :height 30px
+    :display block
+    :border none
+    :content url(img/corner-top-left.png)
+    :padding 0px
+    :line-height 0.1
+    :font-size 1px
+  &:after
+    :background url(img/corner-bottom-right.png) no-repeat top right
+    :margin 0 0 -1px 0
+    :height 30px
+    :display block
+    :border none
+    :content url(img/corner-bottom-left.png)
+    :padding 0px
+    :line-height 0.1
+    :font-size 1px
+
+    
 body
-  :color #000
   :font-family Arial, serif
   :font-size 16px
   :background #fff
   :background-color #000
-  :color #fab444
+  :color #767676
   :margin 0px
   :padding 0px
 
@@ -28,45 +73,18 @@ body
 
 
 h1
-  :height 50px
-  :background url(img/h1-bg.png) top left repeat-x
-  :height 50px
   :font-size 1.8em
-  :margin-left -250px
-  :position relative
   :margin-bottom 0px
-  :letter-spacing 10px
-  :text-shadow 1px 0 2px #242220, 1px 1px 2px orange
-  >
-    img
-      :position absolute
-      :top 12px
-      :left 200px
-      :color #171512
-      :letter-spacing 4px
-      :opacity 0.4
-    span
-      :position absolute
-      :top 7px
-      :left 250px
-      :color #171512
-      :letter-spacing 4px
-  &:before
-    :margin 0px
-    :content url(img/h1-before-bg.png)
+  :letter-spacing -1px
+  :text-shadow 1px 0 1px #ee720d, 1px 1px 1px #000
+  :color #171512
+  :margin-bottom -28px
+  :margin-left 42px
 
-
-p
-  :line-height 30px
-  :margin-top 10px
-  :padding 15px
+.dark
   :color #424242
-  :width 500px
-  :background-color #090807
-  :margin-bottom 50px
-
+#head
+  :margin-top 440px
 
 #content
-  :z-index 100
-  :margin-top 440px
-  :margin-left 350px
+  :color inherit
