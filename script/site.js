@@ -1,10 +1,10 @@
-var github_feed = "http://github.com/feeds/entropie/commits/entropie.github.com/master?" + Math.random(10000)*11;
-var lastfm_feed = "http://ws.audioscrobbler.com/1.0/user/mictro/recenttracks.rss?" + Math.random(10000)*11;
+var github_feed = "http://github.com/feeds/entropie/commits/entropie.github.com/master";
+var lastfm_feed = "http://ws.audioscrobbler.com/1.0/user/mictro/recenttracks.rss";
 
 function mk_feed(url, target){
     $(target).gFeed( 
         { 
-            url: url,
+            url: url + "?" + Math.random(10000)*11,
             title: $(target).attr("rel")
         } 
     ); 
@@ -14,9 +14,17 @@ $(document).ready(function() {
     mk_feed(lastfm_feed, ".lastfm-feed");
     mk_feed(github_feed, ".github-feed");
     
-    $.get("data/test.markdown", function(data){
-        $("#tmp").html(superTextile(data));
+    $.getJSON("index.json", function(data, status){
+        $.each(data["years"], function(i, items){
+            $.each(data["years"][i]["months"]["entries"], function(j, jitems){
+                $.get("data/"+jitems, function(data){
+                    str = "<div class='rounded silver nomargin child'><div>";
+                    $("#post_content").append(str + superTextile(data) + "</div></div>");
+                });
+            });
+        });
     });
+
     
 
 });
