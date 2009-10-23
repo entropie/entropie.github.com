@@ -1,20 +1,18 @@
+var github_feed = "http://github.com/feeds/entropie/commits/entropie.github.com/master?" + Math.random(10000)*11;
+var lastfm_feed = "http://ws.audioscrobbler.com/1.0/user/mictro/recenttracks.rss?" + Math.random(10000)*11;
 
+function mk_feed(url, target, title){
+    $(target).gFeed( 
+        { 
+            url: url,
+            title: title
+        } 
+    ); 
+}
 
 $(document).ready(function() { 
-    var github_feed = "http://github.com/feeds/entropie/commits/entropie.github.com/master?" + Math.random(10000)*11;
-    var lastfm_feed = "http://ws.audioscrobbler.com/1.0/user/mictro/recenttracks.rss?" + Math.random(10000)*11;
-    $('.github-feed').gFeed( 
-        { 
-            url: github_feed,
-            title: "Recent changes.",
-        } 
-    ); 
-    $('.lastfm-feed').gFeed( 
-        { 
-            url: lastfm_feed,
-            title: "last-fm",
-        } 
-    ); 
+    mk_feed(lastfm_feed, ".lastfm-feed", "last.fm");
+    mk_feed(github_feed, ".github-feed", "Recent Changes");
     
     $.get("data/test.markdown", function(data){
         $("#tmp").html(superTextile(data));
