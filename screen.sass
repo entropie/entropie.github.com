@@ -98,6 +98,20 @@ h1
 #head
   :margin-top 440px
 
+#flickr
+  :position absolute
+  :top 0px
+  :left 0px
+  :z-index 100
+  ul
+    li
+      :display inline
+      :padding-left 15px
+      img
+        :opacity 0.25
+        &:hover
+          :opacity 1
+  
 #content
   :color inherit
 
@@ -127,3 +141,7 @@ h1
         .gf-snippet
           :color #344736
           :margin-bottom 15px
+
+.lastfm-feed
+  .gf-snippet
+    :display none
