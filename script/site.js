@@ -16,7 +16,7 @@ $(document).ready(function() {
         } 
     ); 
     
-    $.get("test.markdown", function(data){
+    $.get("data/test.markdown", function(data){
         $("#tmp").html(superTextile(data));
     });
     
