@@ -7,6 +7,13 @@
 .silver {
   background-color: #020208;
   color: #6c7369; }
+  .silver > div {
+    padding: 20px; }
+    .silver > div h1 {
+      margin-top: -55px;
+      margin-bottom: 30px; }
+    .silver > div p:first-child {
+      background-color: red; }
 
 .right {
   margin-top: 0px;
@@ -19,10 +26,6 @@
   margin: 0px;
   padding: 0px; }
 
-.rounded h1, .rounded h2 {
-  padding-left: 10px;
-  font-size: 1.1em;
-  margin-bottom: 0px; }
 .rounded > p {
   padding: 20px; }
 .rounded:before {
@@ -96,7 +99,7 @@ h1 {
   color: #424242; }
 
 #head {
-  margin-top: 440px; }
+  margin-top: 470px; }
 
 #flickr {
   position: absolute;
@@ -119,7 +122,7 @@ h1 {
   padding: 0px; }
 .gfc-control .gfc-resultsRoot .gfc-resultsHeader {
   border: none;
-  display: none; }
+  font-size: 2em; }
 .gfc-control .gfc-resultsRoot .gfc-result .gf-result .gf-title {
   float: left;
   padding-right: 3px; }

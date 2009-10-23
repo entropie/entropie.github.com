@@ -12,11 +12,14 @@ $(document).ready(function() {
     $('.lastfm-feed').gFeed( 
         { 
             url: lastfm_feed,
-            title: "Recent changes.",
+            title: "last-fm",
         } 
     ); 
-
-
+    
+    $.get("test.markdown", function(data){
+        $("#tmp").html(superTextile(data));
+    });
+    
 
 });
 jQuery(function(){

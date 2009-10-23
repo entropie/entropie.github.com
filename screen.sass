@@ -5,6 +5,14 @@
 .silver
   :background-color #020208
   :color #6c7369
+  > div
+    :padding 20px
+    h1
+      :margin-top -55px
+      :margin-bottom 30px
+    p
+      &:first-child
+        :background-color red
 
 .right
   :margin-top 0px
@@ -17,10 +25,6 @@
   :margin 0px
   :padding 0px
 .rounded
-  h1,h2
-    :padding-left 10px
-    :font-size 1.1em
-    :margin-bottom 0px
   > p
     :padding 20px
   &:before
@@ -96,7 +100,8 @@ h1
 .dark
   :color #424242
 #head
-  :margin-top 440px
+  :margin-top 470px
+  
 
 #flickr
   :position absolute
@@ -122,7 +127,7 @@ h1
   .gfc-resultsRoot
     .gfc-resultsHeader
       :border none
-      :display none
+      :font-size 2em
       .gfc-title
     .gfc-result
       .gf-result

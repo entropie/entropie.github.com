@@ -12,8 +12,9 @@
     %link{:href => "screen.css", :rel => "stylesheet", :type => "text/css"}=''
     
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
-    %title Ackro::Inc.about :entropie
-    %script{:type => "text/javascript", :src => "http://www.google.com/jsapi"}=""    
+    %title Ackro
+    %script{:type => "text/javascript", :src => "http://www.google.com/jsapi"}=""
+    %script{:type => "text/javascript", :src => "script/textile.js"}=""
     %script{:type => "text/javascript", :src => "script/jquery.js"}=""
     %script{:type => "text/javascript", :src => "script/jquery.gfeed.js"}=""
     %script{:type => "text/javascript", :src => "script/jquery.flickr.js"}=""
@@ -30,29 +31,10 @@
       #flickr
       #page
         %div{:class => "column width1 first"}
-          %div{:class => "column width1 first dark right lastfm-feed"}
-          %div{:class => "column width1 first dark right github-feed"}
-        %div{:class => "column width2"}
+          %div{:class => "column width1 first dark right lastfm-feed", :rel => "last.fm"}
+          %div{:class => "column width1 first dark right github-feed", :rel => "Recent Changes"}
+        %div{:class => "column width3"}
           %div{:class => "column width3"}
-            %h1
-              Die erste Sichtbare Überschrift Lalal und lili
-          %div
-            %div{:class => "column width3"}
-              %div{:class => "rounded silver nomargin"}
-                %p
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                %p
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                %p
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          %div{:class => "column width1 first"}
-          %div{:class => "column width3"}            
-            %h1
-              Die erste Sichtbare Überschria
-          %div
-            %div{:class => "column width3"}
-              %div{:class => "rounded silver nomargin"}
-                %p
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                %p
-                  Lorem ipsum dolor sit aamet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+            %div{:class => "rounded silver nomargin"}
+              %div{:id => :tmp}
+                  
