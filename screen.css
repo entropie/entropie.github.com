@@ -148,5 +148,8 @@ h1 {
 .lastfm-feed .gf-snippet {
   display: none; }
 
+.twitter-feed .gf-snippet {
+  display: none; }
+
 .github-feed .gf-snippet {
   white-space: pre; }

@@ -1,10 +1,11 @@
-var github_feed = "http://github.com/feeds/entropie/commits/entropie.github.com/master";
-var lastfm_feed = "http://ws.audioscrobbler.com/1.0/user/mictro/recenttracks.rss";
+var github_feed = "http://github.com/feeds/entropie/commits/entropie.github.com/master"+ "?" + Math.random(10000)*11;
+var lastfm_feed = "http://ws.audioscrobbler.com/1.0/user/mictro/recenttracks.rss"+ "?" + Math.random(10000)*11;
+var twitter_feed = "http://twitter.com/statuses/user_timeline/7313002.rss";
 
 function mk_feed(url, target){
     $(target).gFeed( 
         { 
-            url: url + "?" + Math.random(10000)*11,
+            url: url,
             title: $(target).find("a").attr("rel")
         } 
     ); 
@@ -13,6 +14,7 @@ function mk_feed(url, target){
 $(document).ready(function() { 
     mk_feed(lastfm_feed, ".lastfm-feed");
     mk_feed(github_feed, ".github-feed");
+    mk_feed(twitter_feed, ".twitter-feed");
     
     $.getJSON("index.json", function(data, status){
         $.each(data["years"], function(i, items){
