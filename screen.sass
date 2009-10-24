@@ -109,11 +109,21 @@ h1
 #head
   :margin-top 470px
   
-
-#flickr
+#rline
+  :z-index 100
+  :background-color #000
   :position absolute
   :top 0px
-  :left 0px
+  :width 250px
+  :padding 10px
+  :padding-right 5px  
+  :padding-top 300px
+  :left 90px
+  :opacity 0.4
+#flickr
+  :position absolute
+  :top 50px
+  :left 350px
   :z-index 100
   ul
     li
@@ -139,7 +149,6 @@ h1
     .gfc-result
       .gf-result
         .gf-title
-          :float left
           :padding-right 3px
           a
             :text-decoration none
@@ -156,11 +165,23 @@ h1
 
 
 .lastfm-feed
+  :background url(img/last-fm-bg.png) no-repeat top right
+  :height 160px
+  :padding 5px
   .gf-snippet
     :display none
+  a,a:link,a:visted
+    :text-decoration none
+    :color red
 .twitter-feed
+  :background url(img/twitter-bg.png) no-repeat top right
+  :width 244px
+  :height 160px
   .gf-snippet
     :display none
+  .gf-title
+    :color green
+    :padding 3px
 .github-feed
   .gf-snippet
     :white-space pre

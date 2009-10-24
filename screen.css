@@ -107,10 +107,22 @@ h1 {
 #head {
   margin-top: 470px; }
 
-#flickr {
+#rline {
+  z-index: 100;
+  background-color: #000;
   position: absolute;
   top: 0px;
-  left: 0px;
+  width: 250px;
+  padding: 10px;
+  padding-right: 5px;
+  padding-top: 300px;
+  left: 90px;
+  opacity: 0.4; }
+
+#flickr {
+  position: absolute;
+  top: 50px;
+  left: 350px;
   z-index: 100; }
   #flickr ul li {
     display: inline;
@@ -130,7 +142,6 @@ h1 {
   border: none;
   font-size: 2em; }
 .gfc-control .gfc-resultsRoot .gfc-result .gf-result .gf-title {
-  float: left;
   padding-right: 3px; }
   .gfc-control .gfc-resultsRoot .gfc-result .gf-result .gf-title a {
     text-decoration: none;
@@ -145,11 +156,25 @@ h1 {
   color: #344736;
   margin-bottom: 15px; }
 
-.lastfm-feed .gf-snippet {
-  display: none; }
+.lastfm-feed {
+  background: url(img/last-fm-bg.png) no-repeat top right;
+  height: 160px;
+  padding: 5px; }
+  .lastfm-feed .gf-snippet {
+    display: none; }
+  .lastfm-feed a, .lastfm-feed a:link, .lastfm-feed a:visted {
+    text-decoration: none;
+    color: red; }
 
-.twitter-feed .gf-snippet {
-  display: none; }
+.twitter-feed {
+  background: url(img/twitter-bg.png) no-repeat top right;
+  width: 244px;
+  height: 160px; }
+  .twitter-feed .gf-snippet {
+    display: none; }
+  .twitter-feed .gf-title {
+    color: green;
+    padding: 3px; }
 
 .github-feed .gf-snippet {
   white-space: pre; }
