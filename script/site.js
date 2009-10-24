@@ -5,7 +5,7 @@ function mk_feed(url, target){
     $(target).gFeed( 
         { 
             url: url + "?" + Math.random(10000)*11,
-            title: $(target).attr("rel")
+            title: $(target).find("a").attr("rel")
         } 
     ); 
 }
