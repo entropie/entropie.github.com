@@ -35,7 +35,7 @@ jQuery(function(){
         api_key: "10f2a12eaf44ae246dcdfd7fe49c5e8b",
         type:    "search",
         user_id: "84036884@N00",
-        per_page: 7,
+        per_page: 8,
         thumb_size:     "s"
     });
 });
