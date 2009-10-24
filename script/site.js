@@ -18,6 +18,7 @@ $(document).ready(function() {
     
     $.getJSON("index.json", function(data, status){
         $.each(data["years"], function(i, items){
+            //console.log(i);
             $.each(data["years"][i]["months"]["entries"], function(j, jitems){
                 $.get("data/"+jitems, function(data){
                     str = "<div class='rounded silver nomargin child'><div>";

@@ -127,6 +127,7 @@ h1 {
     padding-left: 5px;
     padding-right: 20px; }
     #flickr ul li img {
+      border: 6px solid transparent;
       opacity: 0.25; }
       #flickr ul li img:hover {
         opacity: 1; }
@@ -164,16 +165,37 @@ h1 {
   .lastfm-feed a, .lastfm-feed a:link, .lastfm-feed a:visted {
     text-decoration: none;
     color: red; }
+  .lastfm-feed .gfc-title {
+    color: #203f0b !important; }
 
 .twitter-feed {
   background: url(img/twitter-bg.png) no-repeat top right;
   width: 244px;
   height: 160px; }
+  .twitter-feed .gfc-title {
+    color: #541d52 !important; }
+  .twitter-feed a {
+    color: #80537e !important; }
+  .twitter-feed .gfc-control {
+    padding: 5px; }
   .twitter-feed .gf-snippet {
     display: none; }
   .twitter-feed .gf-title {
     color: green;
     padding: 3px; }
 
-.github-feed .gf-snippet {
-  white-space: pre; }
+.github-feed {
+  background: url(img/github-bg.png) no-repeat top right;
+  width: 244px;
+  height: 160px; }
+  .github-feed .gfc-title {
+    color: #281a06 !important; }
+  .github-feed .gfc-control {
+    padding: 5px; }
+  .github-feed a {
+    color: #3d1603 !important; }
+  .github-feed .gf-snippet {
+    white-space: pre;
+    color: grey; }
+  .github-feed .gf-author {
+    color: #8f602a !important; }
