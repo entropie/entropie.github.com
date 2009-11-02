@@ -1,0 +1,37 @@
+<h1>Ackro.succ #2</h1>
+<p style="float:right;"><a href="http://pb.enti.ty/images/ackro-succ-big.png"><img src="/images/ackro-succ-thumb.png" title="Ackro.succs rspec result" alt="Ackro.succs rspec result" /></a></p>
+<p>Yay, es geht gut vorran. Das neue Ackro&#8212;wobei ich über eine
+namensänderung nachdenke&#8212;nimmt gestalt an. Die dinge die mich in der
+alten Version genervt haben wurden sozusagen im Keim erstickt.</p>
+<p>Das component system ist sauberer gestaltet und auch das angehängte
+Plugin modul lässt viel freiräume. Das Tumblog kennt jetzt eine liste
+default Plugins (z.Z.
+<a href="http://ackro.ath.cx/~mit/hg/backbite/file/d850c3dff32a/spec_skel/plugins/tags.rb">Tags</a>
+und
+<a href="http://ackro.ath.cx/~mit/hg/backbite/file/d850c3dff32a/spec_skel/plugins/date.rb">Date</a>),
+und fügt diese automatisch dem Component hinzu. Für die configuration
+des Plugins fügt man einfach die plugin definition dem Component
+hinzu.</p>
+<p>Ein gedanke den ich schon von anfang an hegte war den kompletten
+<acronym title="HyperTextMarkupLanguage"><span class="caps">HTML</span></acronym> tree <code>rw</code> im Plugin zur
+verfügung zu stellen, z.B. um eine <acronym title="TableOfContents"><span class="caps">TOC</span></acronym> an einer
+anderen stelle zu appenden &#8212;
+<a href="http://code.whytheluckystiff.net/hpricot/">Hpricot</a> machts möglich
+(wenn auch nicht immer so schön wie ich es gerne hätte).</p>
+<h2>Potentielle probelme/Ideen</h2>
+<ul>
+	<li>Archiv &#8212; wie? Gerade schwebt mir eine wöchentliche rotation vor..</li>
+	<li>Automatische plugins &#8212; wie der name sagt, plugins die keinerlei userinteraktion fordern (wieder das bsp. mit der <span class="caps">TOC</span>)</li>
+	<li>fiese system() calls &#8212; die müssen weg, glaube ich&#8230; Aber.. ich scheiss ja eh auf portability</li>
+	<li>Dynamisches <a href="http://ramaze.rubyforge.org/">Ramaze</a> frontend</li>
+</ul>
+<h2>Links</h2>
+<ul>
+	<li><a href="http://ackro.ath.cx/~mit/hg/ackro.suc/">hg repos</a></li>
+	<li><a href="http://ackro.ath.cx/~mit/doc/ackro.suc/rdoc/">rdoc</a></li>
+</ul>
+<h2>Update</h2>
+<ol>
+	<li>Umgenannt zu <ins>backbite</ins>.</li>
+</ol>
+<p class="np">NP: Beethoven &#8211; emperor</p>
