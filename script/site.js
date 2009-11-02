@@ -19,7 +19,7 @@ function get_posts(){
       dataType: "json",
       success: function(data){
         $.each(data, function(i, entry){
-          console.log(entry["t"]);
+          window.console && console.log(entry["t"]);
           $.ajax({
             url: "data/" + entry["file"],
             success: function(data){
@@ -27,7 +27,7 @@ function get_posts(){
               $("#post_content").append(str + data + "</div></div>");
             },
             complete: function(a,b){
-              console.log(23);
+              window.console && console.log(23);
             }
           });
         });
