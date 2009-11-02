@@ -11,33 +11,33 @@ function mk_feed(url, target){
     );
 }
 
-$(document).ready(function() {
-    mk_feed(lastfm_feed, ".lastfm-feed");
-    mk_feed(github_feed, ".github-feed");
-    mk_feed(twitter_feed, ".twitter-feed");
-
+function get_posts(){
     $.getJSON("index.json", function(data, status){
-        //console.log(typeof  data);
-        $.each(data["years"], function(year, items){
-          console.log(year);
-          $.each(items["months"], function(month, months){
-            console.log(month);
-            $.each(months, function(day, ddata){
-              $.each(ddata, function(k, file){
-                $.get("data/"+file, function(data){
-                   var date = year + "-" + month + "-" + day;
-                   str = "<div class='rounded silver nomargin child'><div rel='" + date + "'>" + date;
-                   $("#post_content").append(str + data + "</div></div>");
-                  });
-                });
+
+      $.each(data["years"], function(year, items){
+        $.each(items["months"], function(month, months){
+          $.each(months, function(day, ddata){
+            $.each(ddata, function(k, file){
+              $.get("data/"+file, function(data){
+                var date = year + "-" + month + "-" + day;
+                str = "<div class='rounded silver nomargin child'><div rel='" + date + "'>";
+                $("#post_content").append(str + data + "</div></div>");
               });
             });
+          });
         });
+      });
     });
+}
 
 
-
+$(document).ready(function() {
+  get_posts();
+  mk_feed(lastfm_feed, ".lastfm-feed");
+  mk_feed(github_feed, ".github-feed");
+  mk_feed(twitter_feed, ".twitter-feed");
 });
+
 jQuery(function(){
     $("#flickr").flickr({
         api_key: "10f2a12eaf44ae246dcdfd7fe49c5e8b",
