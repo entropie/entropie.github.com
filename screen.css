@@ -16,8 +16,6 @@ a {
     .silver > div h1 {
       margin-top: -55px;
       margin-bottom: 30px; }
-    .silver > div p:first-child {
-      background-color: red; }
 
 .right {
   margin-top: 0px;
@@ -32,6 +30,11 @@ a {
   margin-top: 50px; }
 #post_content p {
   margin-bottom: 15px; }
+#post_content .author {
+  text-align: right; }
+#post_content blockquote {
+  color: silver;
+  background-color: inherhit !important; }
 
 .nomargin {
   margin: 0px;
@@ -126,7 +129,8 @@ h1 {
     opacity: .8; }
 
 #flickr {
-  z-index: 100; }
+  z-index: 100;
+  margin-bottom: 60px; }
   #flickr ul li {
     display: inline;
     padding-left: 5px;

@@ -12,21 +12,33 @@ function mk_feed(url, target){
 }
 
 function get_posts(){
-    $.getJSON("index.json", function(data, status){
-
-      $.each(data["years"], function(year, items){
-        $.each(items["months"], function(month, months){
-          $.each(months, function(day, ddata){
-            $.each(ddata, function(k, file){
-              $.get("data/"+file, function(data){
-                var date = year + "-" + month + "-" + day;
-                str = "<div class='rounded silver nomargin child'><div rel='" + date + "'>";
-                $("#post_content").append(str + data + "</div></div>");
+    var posts = [];
+    $.ajax({
+      type: "GET",
+      url: "index.json",
+      processData: true,
+      dataType: "json",
+      success: function(data){
+        $.each(data["years"], function(year, items){            // years
+          $.each(items["months"], function(month, months){      // months
+            $.each(months, function(day, ddata){                // days
+              $.each(ddata, function(k, file){
+                $.ajax({
+                  url: "data/"+file,
+                  success: function(data){
+                    var date = year + "-" + month + "-" + day;
+                    str = "<div class='rounded silver nomargin child' rel='" + date + "'><div>";
+                    $("#post_content").prepend(str + data + "</div></div>");
+                  },
+                  complete: function(a,b){
+                    console.log(23);
+                  }
+                });
               });
             });
           });
         });
-      });
+      }
     });
 }
 

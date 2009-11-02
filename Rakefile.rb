@@ -78,10 +78,14 @@ end
 require "redcloth"
 task :markup do
   read_dir("data") do |file|
+    next unless file =~ /\.markdown/
     path, name = File.dirname(file), File.basename(file)
     nfile_name = path + "/" + name.sub(File.extname(name), '') + ".html"
     markup = File.readlines(file).join
-    html = RedCloth.new(markup).to_html
+    html = RedCloth.new(markup).to_html.gsub(/<br \/>/, '')
+    puts html
+    puts
+    
     File.open(nfile_name, 'w+'){|f| f.write(html)}
   end
 end
