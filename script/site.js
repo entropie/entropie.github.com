@@ -3,32 +3,39 @@ var lastfm_feed = "http://ws.audioscrobbler.com/1.0/user/mictro/recenttracks.rss
 var twitter_feed = "http://twitter.com/statuses/user_timeline/7313002.rss";
 
 function mk_feed(url, target){
-    $(target).gFeed( 
-        { 
+    $(target).gFeed(
+        {
             url: url,
             title: $(target).find("a").attr("rel")
-        } 
-    ); 
+        }
+    );
 }
 
-$(document).ready(function() { 
+$(document).ready(function() {
     mk_feed(lastfm_feed, ".lastfm-feed");
     mk_feed(github_feed, ".github-feed");
     mk_feed(twitter_feed, ".twitter-feed");
-    
+
     $.getJSON("index.json", function(data, status){
-        $.each(data["years"], function(i, items){
-            //console.log(i);
-            $.each(data["years"][i]["months"]["entries"], function(j, jitems){
-                $.get("data/"+jitems, function(data){
-                    str = "<div class='rounded silver nomargin child'><div>";
-                    $("#post_content").append(str + superTextile(data) + "</div></div>");
+        //console.log(typeof  data);
+        $.each(data["years"], function(year, items){
+          console.log(year);
+          $.each(items["months"], function(month, months){
+            console.log(month);
+            $.each(months, function(day, ddata){
+              $.each(ddata, function(k, file){
+                $.get("data/"+file, function(data){
+                   var date = year + "-" + month + "-" + day;
+                   str = "<div class='rounded silver nomargin child'><div rel='" + date + "'>" + date;
+                   $("#post_content").append(str + data + "</div></div>");
+                  });
                 });
+              });
             });
         });
     });
 
-    
+
 
 });
 jQuery(function(){

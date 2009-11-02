@@ -33,26 +33,29 @@ task :move_data_files do
     rescue
       time = date = Time.now
     end
-    
-    mkdir_p(path = "data/#{time.year}/#{time.month}")
-    mv file , path
+    mkdir_p(path = "data/#{time.year}/#{time.month}/#{time.day}")
+    fname = time.strftime("%H%M%I-") +  File.basename(file)
+    mv file, path + "/" + fname
   end
 end
 
-task :index => :move_data_files do
+task :index => [:move_data_files, :markup] do
 
   ret = {:years => {}}
   dir = File.dirname(__FILE__) + "/"
   read_dir("data") do |file|
     filet = file.gsub(/^#{dir}/, '').gsub(/^data\//, '')
     year = filet.scan(/^(\d+)\//).flatten.first.to_i
-    month = File.basename(File.dirname(filet)).to_i
+    month = File.basename(File.dirname(File.dirname(filet))).to_i
     name = File.basename(filet)
+    day = File.basename(File.dirname(filet))
+    next if name =~ /\.markdown$/
+    smonth = "%02i"%month
     ret[:years][year] ||= {:months => {}}
-    ret[:years][year][:months] ||= {:entries => {}}
-    ret[:years][year][:months][:entries] ||= []
-    ret[:years][year][:months][:entries] << filet
+    ret[:years][year][:months][smonth] ||= {}
+    (ret[:years][year][:months][smonth]["%02i"%day] ||= []) << filet
   end
+  p ret
   File.open('index.json', 'w+'){|file| file.write(ret.to_json)}
 end
 
@@ -70,6 +73,19 @@ task :baseline do
   end
   rm_r "tmp"
 end
+
+
+require "redcloth"
+task :markup do
+  read_dir("data") do |file|
+    path, name = File.dirname(file), File.basename(file)
+    nfile_name = path + "/" + name.sub(File.extname(name), '') + ".html"
+    markup = File.readlines(file).join
+    html = RedCloth.new(markup).to_html
+    File.open(nfile_name, 'w+'){|f| f.write(html)}
+  end
+end
+
 
 task :hamlize do
   ruby "../../bin/hamlize ."
