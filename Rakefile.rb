@@ -39,9 +39,9 @@ task :move_data_files do
   end
 end
 
-task :index => [:move_data_files, :markup] do
 
-  ret = {:years => {}}
+task :index => [:move_data_files, :markup] do
+  ret = []
   dir = File.dirname(__FILE__) + "/"
   read_dir("data") do |file|
     filet = file.gsub(/^#{dir}/, '').gsub(/^data\//, '')
@@ -51,14 +51,12 @@ task :index => [:move_data_files, :markup] do
     day = File.basename(File.dirname(filet))
     next if name =~ /\.markdown$/
     smonth = "%02i"%month
-    ret[:years][year] ||= {:months => {}}
-    ret[:years][year][:months][smonth] ||= {}
-    (ret[:years][year][:months][smonth]["%02i"%day] ||= []) << filet
+    t = Time.mktime(year, month, day)
+    ret << {:year => year, :month => smonth, :day => day, :file => filet, :t => t}
   end
-  p ret
+  ret = ret.sort_by{|h| h[:t]}.reverse
   File.open('index.json', 'w+'){|file| file.write(ret.to_json)}
 end
-
 
 
 task :baseline do
@@ -83,9 +81,6 @@ task :markup do
     nfile_name = path + "/" + name.sub(File.extname(name), '') + ".html"
     markup = File.readlines(file).join
     html = RedCloth.new(markup).to_html.gsub(/<br \/>/, '')
-    puts html
-    puts
-    
     File.open(nfile_name, 'w+'){|f| f.write(html)}
   end
 end
