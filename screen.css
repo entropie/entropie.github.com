@@ -1,12 +1,24 @@
 a {
-  color: #947b83;
+  color: #339900;
   text-decoration: none; }
+  a:link, a:visited {
+    color: #339900; }
+    a:link:hover, a:visited:hover {
+      border-bottom: 1px solid #339900; }
+
+.spinner {
+  height: 100px;
+  width: 100%;
+  background-color: red;
+  background: url(img/spinner.gif) no-repeat top center;
+  position: absolute; }
 
 #page {
   margin: 0 auto 36px auto; }
 
 .child {
-  margin-top: 100px; }
+  margin-top: 150px;
+  position: relative; }
 
 .silver {
   background-color: #020302;
@@ -16,6 +28,10 @@ a {
     .silver > div h1 {
       margin-top: -55px;
       margin-bottom: 30px; }
+  .silver h2, .silver h3, .silver h4, .silver h5, .silver h6 {
+    color: #333300; }
+  .silver .unloaded {
+    background-color: red; }
 
 .right {
   margin-top: 0px;
@@ -29,12 +45,25 @@ a {
 #post_content > div {
   margin-top: 50px; }
 #post_content p {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  font-size: 1.3em; }
+#post_content strong {
+  font-weight: bold;
+  color: #333333;
+  letter-spacing: 2px; }
 #post_content .author {
   text-align: right; }
 #post_content blockquote {
-  color: silver;
+  color: grey;
   background-color: inherhit !important; }
+#post_content .date {
+  color: red;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: #001A33; }
+  #post_content .date:before {
+    content: "-- "; }
 
 .nomargin {
   margin: 0px;
@@ -64,8 +93,7 @@ a {
   font-size: 1px; }
 
 body {
-  font-family: Arial, serif;
-  font-size: 16px;
+  font-family: helvetica;
   background: #fff;
   background-color: #000;
   color: #767676;
@@ -124,13 +152,14 @@ h1 {
   padding: 10px;
   padding-right: 5px;
   left: 90px;
-  opacity: 0.4; }
+  opacity: 0.2; }
   #rline:hover {
     opacity: .8; }
 
 #flickr {
   z-index: 100;
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  min-height: 400px; }
   #flickr ul li {
     display: inline;
     padding-left: 5px;

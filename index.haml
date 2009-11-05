@@ -18,6 +18,7 @@
     %script{:type => "text/javascript", :src => "script/jquery.js"}=""
     %script{:type => "text/javascript", :src => "script/jquery.gfeed.js"}=""
     %script{:type => "text/javascript", :src => "script/jquery.flickr.js"}=""
+    %script{:type => "text/javascript", :src => "script/date.js"}=""
     %script{:type => "text/javascript", :src => "script/site.js"}=""
   %body
     #bg_source{:style => "display:none"}
@@ -30,6 +31,8 @@
       #head
       %div{:id => :rline}
         #flickr
+        %div{:class => "column width1 first dark right topics"}
+          %ul
         %div{:class => "column width1 first dark right lastfm-feed"}
           %a{:rel => "last.fm"}
         %div{:class => "column width1 first dark right twitter-feed"}

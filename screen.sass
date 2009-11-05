@@ -1,16 +1,24 @@
 a
-  :color #947b83
+  :color #339900
   :text-decoration none
   &:link,&:visited
-    f:color #947b83
-
-
+    :color #339900
+    &:hover
+      :border-bottom 1px solid #339900
+    
+.spinner
+  :height 100px
+  :width 100%
+  :background-color red
+  :background url(img/spinner.gif) no-repeat top center
+  :position absolute
 
 
 #page
   :margin 0 auto 36px auto
 .child
-  :margin-top 100px
+  :margin-top 150px
+  :position relative
 .silver
   :background-color #020302
   :color #6c7369
@@ -19,7 +27,10 @@ a
     h1
       :margin-top -55px
       :margin-bottom 30px
-  
+  h2,h3,h4,h5,h6
+    :color #333300
+  .unloaded
+    :background-color red
 .right
   :margin-top 0px
   :font-size 0.7em  
@@ -34,11 +45,24 @@ a
     :margin-top 50px
   p
     :margin-bottom 15px
+    :font-size 1.3em
+  strong
+    :font-weight bold
+    :color #333333
+    :letter-spacing 2px
   .author
     :text-align right
   blockquote
-    :color silver
+    :color grey
     :background-color inherhit !important
+  .date
+    :color red
+    :position absolute
+    :bottom 0px
+    :right 0px
+    :color #001A33
+    &:before
+      :content "-- "
 
 .nomargin
   :margin 0px
@@ -69,8 +93,7 @@ a
 
     
 body
-  :font-family Arial, serif
-  :font-size 16px
+  :font-family helvetica
   :background #fff
   :background-color #000
   :color #767676
@@ -132,12 +155,13 @@ h1
   :padding-right 5px  
   //:padding-top 300px
   :left 90px
-  :opacity 0.4
+  :opacity 0.2
   &:hover
     :opacity .8
 #flickr
   :z-index 100
   :margin-bottom 60px
+  :min-height 400px
   ul
     li
       :display inline

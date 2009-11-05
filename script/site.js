@@ -11,6 +11,50 @@ function mk_feed(url, target){
     );
 }
 
+function parse_hash(){
+    var str = document.location.hash.substr(1);
+    if(str){
+        var ret = parseInt(str.match(/^\d+$/));
+        if(ret)
+            return ret;
+        else
+            return -1;
+    } else {
+        return false;
+    }
+}
+
+function append_postentry(entry){
+    var d = Date.parse(entry["t"]);
+    var dd = d.toString("MMMM, dddd dd. yyyy");
+    var html = "<div id=" + d.toISOString() + " class='rounded silver nomargin child' rel='" +
+        entry["file"] + "'><div class=\"spinner\"></div><div class='date' rel=" + d.toISOString() + ">" + dd + "</div><div>";
+    $("#post_content").append(html);
+}
+
+function append_postdata(data, start){
+    start = typeof start == "undefined" ? 0 : start;
+    var postd = '';
+    var ph = parse_hash();
+    if(ph && ph >= 0)
+        start = ph;
+    else if(ph == -1)
+        postd = document.location.hash.substr(1);
+    var end = start+5;
+    $.each(data, function(i, entry){
+        if(postd){
+          var d = Date.parse(entry["t"]);
+          if(d.toISOString() == postd){
+              append_postentry(entry);
+          }
+        } else if(i >= start && i < end){
+            append_postentry(entry);
+        }
+    });
+}
+
+
+
 function get_posts(){
     $.ajax({
       type: "GET",
@@ -18,17 +62,15 @@ function get_posts(){
       processData: true,
       dataType: "json",
       success: function(data){
-        $.each(data, function(i, entry){
-          window.console && console.log(entry["t"]);
-          $.ajax({
-            url: "data/" + entry["file"],
-            success: function(data){
-              str = "<div class='rounded silver nomargin child' rel='" + "lal" + "'><div>";
-              $("#post_content").append(str + data + "</div></div>");
-            },
-            complete: function(a,b){
-              window.console && console.log(23);
-            }
+          append_postdata(data);
+      },
+      complete: function(){
+        $('#post_content > div').each(function(){
+          $(this).find("> div:gt(1)").load("data/" + $(this).attr("rel"), function(){
+            var date = $(this).parent().find(".date").attr("rel");
+            var str = "<li><a href='#" + date + "'>" + $(this).find("h1").text() + "</a></li>";
+              $(this).parent().find(".spinner").hide();
+            $("#rline .topics ul").append(str);
           });
         });
       }
